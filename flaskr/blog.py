@@ -36,9 +36,9 @@ def create():
             db.execute(
                 'INSERT INTO post (title, body, author_id)'
                 ' VALUES (?, ?, ?)',
-                (title, body, g.user['id])
+                (title, body, g.user['id'])
             )
             db.commit()
-            return redirect(url+for('blog.index'))
+            return redirect(url_for('blog.index'))
     
     return render_template('blog/create.html')
